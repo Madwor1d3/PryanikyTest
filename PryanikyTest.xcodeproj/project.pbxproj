@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		0A60AE8E2236CDD30093FD1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AE8D2236CDD30093FD1E /* AppDelegate.swift */; };
-		0A60AE902236CDD30093FD1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AE8F2236CDD30093FD1E /* ViewController.swift */; };
-		0A60AE932236CDD30093FD1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A60AE912236CDD30093FD1E /* Main.storyboard */; };
+		0A60AE902236CDD30093FD1E /* PryanikyObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AE8F2236CDD30093FD1E /* PryanikyObjectView.swift */; };
+		0A60AE932236CDD30093FD1E /* Pryaniky.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A60AE912236CDD30093FD1E /* Pryaniky.storyboard */; };
 		0A60AE952236CDD60093FD1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A60AE942236CDD60093FD1E /* Assets.xcassets */; };
 		0A60AE982236CDD60093FD1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A60AE962236CDD60093FD1E /* LaunchScreen.storyboard */; };
+		0A60AEA02236DF410093FD1E /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AE9F2236DF410093FD1E /* Cell.swift */; };
+		0A60AEAC2236E6330093FD1E /* PryanikyObjectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AEAB2236E6330093FD1E /* PryanikyObjectPresenter.swift */; };
+		0A60AEB02237EA690093FD1E /* DictionaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AEAF2237EA690093FD1E /* DictionaryData.swift */; };
+		0A60AEB22237F12B0093FD1E /* SelectorVariantsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AEB12237F12B0093FD1E /* SelectorVariantsData.swift */; };
+		0A60AEC6223806310093FD1E /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AEC5223806310093FD1E /* Object.swift */; };
+		0A60AECB223824FA0093FD1E /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AECA223824FA0093FD1E /* DataContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A60AE8A2236CDD30093FD1E /* PryanikyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PryanikyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A60AE8D2236CDD30093FD1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A60AE8F2236CDD30093FD1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0A60AE922236CDD30093FD1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0A60AE8F2236CDD30093FD1E /* PryanikyObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyObjectView.swift; sourceTree = "<group>"; };
+		0A60AE922236CDD30093FD1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pryaniky.storyboard; sourceTree = "<group>"; };
 		0A60AE942236CDD60093FD1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A60AE972236CDD60093FD1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A60AE992236CDD60093FD1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A60AE9F2236DF410093FD1E /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		0A60AEAB2236E6330093FD1E /* PryanikyObjectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryanikyObjectPresenter.swift; sourceTree = "<group>"; };
+		0A60AEAF2237EA690093FD1E /* DictionaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryData.swift; sourceTree = "<group>"; };
+		0A60AEB12237F12B0093FD1E /* SelectorVariantsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorVariantsData.swift; sourceTree = "<group>"; };
+		0A60AEC5223806310093FD1E /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		0A60AECA223824FA0093FD1E /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,100 @@
 		0A60AE8C2236CDD30093FD1E /* PryanikyTest */ = {
 			isa = PBXGroup;
 			children = (
-				0A60AE8D2236CDD30093FD1E /* AppDelegate.swift */,
-				0A60AE8F2236CDD30093FD1E /* ViewController.swift */,
-				0A60AE912236CDD30093FD1E /* Main.storyboard */,
-				0A60AE942236CDD60093FD1E /* Assets.xcassets */,
-				0A60AE962236CDD60093FD1E /* LaunchScreen.storyboard */,
-				0A60AE992236CDD60093FD1E /* Info.plist */,
+				0A60AEA52236E38A0093FD1E /* Application */,
+				0A60AEA72236E3D30093FD1E /* PryanikyObject */,
+				0A60AEA62236E3BB0093FD1E /* Supporting files */,
 			);
 			path = PryanikyTest;
+			sourceTree = "<group>";
+		};
+		0A60AEA12236E3560093FD1E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0A60AE8D2236CDD30093FD1E /* AppDelegate.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0A60AEA22236E3590093FD1E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A60AE962236CDD60093FD1E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A60AEA32236E35C0093FD1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A60AEA52236E38A0093FD1E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0A60AEA32236E35C0093FD1E /* Model */,
+				0A60AEA22236E3590093FD1E /* View */,
+				0A60AEA12236E3560093FD1E /* Presenter */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0A60AEA62236E3BB0093FD1E /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				0A60AE942236CDD60093FD1E /* Assets.xcassets */,
+				0A60AE992236CDD60093FD1E /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		0A60AEA72236E3D30093FD1E /* PryanikyObject */ = {
+			isa = PBXGroup;
+			children = (
+				0A60AEA82236E4BA0093FD1E /* Model */,
+				0A60AEA92236E4C00093FD1E /* View */,
+				0A60AEAA2236E4C80093FD1E /* Presenter */,
+			);
+			path = PryanikyObject;
+			sourceTree = "<group>";
+		};
+		0A60AEA82236E4BA0093FD1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A60AEB52237F2A00093FD1E /* ObjectData */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A60AEA92236E4C00093FD1E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A60AE912236CDD30093FD1E /* Pryaniky.storyboard */,
+				0A60AE8F2236CDD30093FD1E /* PryanikyObjectView.swift */,
+				0A60AE9F2236DF410093FD1E /* Cell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A60AEAA2236E4C80093FD1E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0A60AEAB2236E6330093FD1E /* PryanikyObjectPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0A60AEB52237F2A00093FD1E /* ObjectData */ = {
+			isa = PBXGroup;
+			children = (
+				0A60AEC5223806310093FD1E /* Object.swift */,
+				0A60AEAF2237EA690093FD1E /* DictionaryData.swift */,
+				0A60AECA223824FA0093FD1E /* DataContainer.swift */,
+				0A60AEB12237F12B0093FD1E /* SelectorVariantsData.swift */,
+			);
+			name = ObjectData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +222,7 @@
 			files = (
 				0A60AE982236CDD60093FD1E /* LaunchScreen.storyboard in Resources */,
 				0A60AE952236CDD60093FD1E /* Assets.xcassets in Resources */,
-				0A60AE932236CDD30093FD1E /* Main.storyboard in Resources */,
+				0A60AE932236CDD30093FD1E /* Pryaniky.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,20 +233,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A60AE902236CDD30093FD1E /* ViewController.swift in Sources */,
+				0A60AEA02236DF410093FD1E /* Cell.swift in Sources */,
+				0A60AEB02237EA690093FD1E /* DictionaryData.swift in Sources */,
+				0A60AEB22237F12B0093FD1E /* SelectorVariantsData.swift in Sources */,
+				0A60AE902236CDD30093FD1E /* PryanikyObjectView.swift in Sources */,
+				0A60AEAC2236E6330093FD1E /* PryanikyObjectPresenter.swift in Sources */,
+				0A60AEC6223806310093FD1E /* Object.swift in Sources */,
 				0A60AE8E2236CDD30093FD1E /* AppDelegate.swift in Sources */,
+				0A60AECB223824FA0093FD1E /* DataContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0A60AE912236CDD30093FD1E /* Main.storyboard */ = {
+		0A60AE912236CDD30093FD1E /* Pryaniky.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0A60AE922236CDD30093FD1E /* Base */,
 			);
-			name = Main.storyboard;
+			name = Pryaniky.storyboard;
 			sourceTree = "<group>";
 		};
 		0A60AE962236CDD60093FD1E /* LaunchScreen.storyboard */ = {
@@ -284,7 +388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV5BQ776YB;
-				INFOPLIST_FILE = PryanikyTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PryanikyTest/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +406,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VV5BQ776YB;
-				INFOPLIST_FILE = PryanikyTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PryanikyTest/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
