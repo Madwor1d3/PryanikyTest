@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class ModelHzItem: ProfileViewModelItem {
+    var type: ModelItemType {
+        return .hz
+    }
+    var sectionTitle: String {
+        return "Hz section"
+    }
+    
+    var text: String
+    
+    init(text: String) {
+        self.text = text
+    }
+}

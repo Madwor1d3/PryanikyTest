@@ -14,10 +14,14 @@ enum ModelItemType: String {
     case selector
 }
 
-protocol CustomElementModel: class {
+protocol ProfileViewModelItem {
     var type: ModelItemType { get }
+    var rowCount: Int { get }
+    var sectionTitle: String  { get }
 }
 
-protocol CustomElementCell: class {
-    func configure(withModel: CustomElementModel)
+extension ProfileViewModelItem {
+    var rowCount: Int {
+        return 1
+    }
 }

@@ -9,16 +9,18 @@
 import UIKit
 
 class PictureCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBOutlet weak var labelText: UILabel!
+    @IBOutlet weak var pictureImage: UIImageView!
+    
+    var item: ProfileViewModelItem? {
+        didSet {
+            guard let item = item as? ModelPictureItem  else {
+                return
+            }
+            labelText.text = item.text
+            pictureImage.image = UIImage(named: item.pictureUrl)
+        }
     }
     
 }

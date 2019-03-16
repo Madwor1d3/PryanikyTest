@@ -9,16 +9,15 @@
 import UIKit
 
 class SelectorCell: UITableViewCell {
+    
+    
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var item: ProfileViewModelItem? {
+        didSet {
+            guard let item = item as? ModelSelectorItem  else {
+                return
+            }
+        }
     }
     
 }

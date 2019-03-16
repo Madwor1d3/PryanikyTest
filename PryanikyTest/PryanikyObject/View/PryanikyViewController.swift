@@ -8,76 +8,76 @@
 
 import UIKit
 
-class PryanikyObjectView: UIViewController {
+class PryanikyViewController: UIViewController {
     
-    private let jsonUrlString = "https://prnk.blob.core.windows.net/tmp/JSONSample.json"
-    private var singleObject: Object?
-
+    let some: ProfileViewModel? = nil
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        jsonParsing()
         tableView.tableFooterView = UIView()
+        cellRegister()
     }
-
-
     
-    func jsonParsing() {
-        
-        guard let url = URL(string: jsonUrlString) else { return }
-
-        URLSession.shared.dataTask(with: url) { (data, response, err) in
-
-            guard let data = data else { return }
-
-            do {
-                self.singleObject = try JSONDecoder().decode(Object.self, from: data)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let jsonErr {
-                print("Error serializing json:", jsonErr)
-            }
-            }.resume()
-
+    func cellRegister() {
+        let hzCellName = UINib(nibName: "HzCell", bundle: nil)
+        tableView.register(hzCellName, forCellReuseIdentifier: "PictureCell")
+        let pictureCellName = UINib(nibName: "PictureCell", bundle: nil)
+        tableView.register(pictureCellName, forCellReuseIdentifier: "PictureCell")
+        let selectorCellName = UINib(nibName: "SelectorCell", bundle: nil)
+        tableView.register(selectorCellName, forCellReuseIdentifier: "SelectorCell")
     }
 }
 
-
-extension PryanikyObjectView: UITableViewDelegate {
+extension PryanikyViewController: UITableViewDelegate {
+    
 }
 
-extension PryanikyObjectView: UITableViewDataSource {
-
+extension PryanikyViewController: UITableViewDataSource {
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return singleObject?.objectView.count ?? 0
+        return some?.singleObject?.objectView.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellModel = customElements[indexPath.row]
-        let cellIdentifier = cellModel.type.rawValue
-        let customCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomElementCell
-        
-        customCell.configure(withModel: cellModel)
-        
-        return customCell as! UITableViewCell
+        let item = some?.items[indexPath.section]
+        switch item?.type {
+        case .hz?:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "HzCell",for: indexPath) as? HzCell {
+                cell.item = item
+                return cell
+            }
+        case .picture?:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as? PictureCell {
+                cell.item = item
+                return cell
+            }
+            
+        case .selector?:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "SelectorCell", for: indexPath) as? SelectorCell {
+                return cell
+            }
+        case .none:
+            break
+        }
+        return UITableViewCell()
     }
-
-        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? HzCell
-//
-//        let type = CustomElementType(rawValue: singleObject?.objectView[indexPath.row] ?? "")
-//        let object = singleObject?.objectView.first(where: { $0 == type?.rawValue})
-//        cell?.dataLabel.text = object
-//
-//        return cell!
-//    }
     
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        switch items[indexPath.section].type {
+//        }}
+    
+    
+    //        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? HzCell
+    //
+    //        let type = CustomElementType(rawValue: singleObject?.objectView[indexPath.row] ?? "")
+    //        let object = singleObject?.objectView.first(where: { $0 == type?.rawValue})
+    //        cell?.dataLabel.text = object
+    //
+    //        return cell!
+    //    }
 }
-
-

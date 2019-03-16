@@ -9,16 +9,15 @@
 import UIKit
 
 class HzCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    @IBOutlet weak var labelText: UILabel!
+    
+    var item: ProfileViewModelItem? {
+        didSet {
+            guard let item = item as? ModelHzItem  else {
+                return
+            }
+            labelText.text = item.text
+        }
+    }  
 }

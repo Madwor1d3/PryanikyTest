@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class ModelSelectorItem: ProfileViewModelItem {
+    var type: ModelItemType {
+        return .selector
+    }
+    var sectionTitle: String {
+        return "selector section"
+    }
+    var selectedID: Int
+    var variants: [SelectorVariantsData]
+    
+    init(selectedID: Int, variants: [SelectorVariantsData]) {
+        self.selectedID = selectedID
+        self.variants = variants
+    }
+}

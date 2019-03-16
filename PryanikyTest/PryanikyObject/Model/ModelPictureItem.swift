@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+class ModelPictureItem: ProfileViewModelItem {
+    var type: ModelItemType {
+        return .picture
+    }
+    var sectionTitle: String {
+        return "picture section"
+    }
+    var text: String
+    var pictureUrl: String
+    
+    init(text: String, pictureUrl: String) {
+        self.text = text
+        self.pictureUrl = pictureUrl
+
+    }
+}
