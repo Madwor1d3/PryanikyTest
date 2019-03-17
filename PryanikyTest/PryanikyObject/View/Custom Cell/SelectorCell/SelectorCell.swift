@@ -17,7 +17,10 @@ class SelectorCell: UITableViewCell {
             guard let item = item as? ModelSelectorItem  else {
                 return
             }
+            configure(with: item)
         }
     }
     
+    func configure(with item: ModelSelectorItem) {
+    }
 }

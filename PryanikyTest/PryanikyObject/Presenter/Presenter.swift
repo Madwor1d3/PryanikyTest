@@ -32,14 +32,14 @@ class Presenter {
                 let sequenceArray = self.singleObject.objectView
                     for i in sequenceArray {
                         if i == "hz" {
-                            if let name = self.singleObject?.objectData.first(where: {$0.name == "hz"}) {
-                                let hzItem = ModelHzItem(text: name)
+                            if let hzObjectName = self.singleObject?.objectData.first(where: {$0.name == "hz"}) {
+                                let hzItem = ModelHzItem(text: hzObjectName.name)
                                 self.items.append(hzItem)
                             }
                         }
                         else if i == "picture" {
-                            if let nameTwo = self.singleObject?.objectData[1].data.text, let pictureUrl = self.singleObject?.objectData[1].data.url {
-                                let pictureItem = ModelPictureItem(text: nameTwo, pictureUrl: pictureUrl)
+                            if let pictureObjectName = self.singleObject?.objectData.first(where: {$0.name == "picture"}), let pictureUrl = self.singleObject?.objectData.first(where: {$0.name == "picture"}) {
+                                let pictureItem = ModelPictureItem(text: pictureObjectName.name, pictureUrl: pictureUrl.data.url ?? "")
                                 self.items.append(pictureItem)
                             }
                         }
