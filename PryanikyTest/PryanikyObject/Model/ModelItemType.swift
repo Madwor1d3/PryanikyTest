@@ -14,13 +14,13 @@ enum ModelItemType: String {
     case selector
 }
 
-protocol ProfileViewModelItem {
+protocol ModelItem {
     var type: ModelItemType { get }
     var rowCount: Int { get }
     var sectionTitle: String  { get }
 }
 
-extension ProfileViewModelItem {
+extension ModelItem {
     var rowCount: Int {
         return 1
     }

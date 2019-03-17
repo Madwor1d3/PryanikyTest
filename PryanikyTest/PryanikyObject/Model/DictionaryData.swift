@@ -12,6 +12,4 @@ struct DictionaryData: Decodable {
     
     let name: String
     let data: DataContainer
-    
-
 }

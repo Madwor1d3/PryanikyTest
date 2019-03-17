@@ -12,7 +12,7 @@ class HzCell: UITableViewCell {
     
     @IBOutlet weak var labelText: UILabel!
     
-    var item: ProfileViewModelItem? {
+    var item: ModelItem? {
         didSet {
             guard let item = item as? ModelHzItem  else {
                 return

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ModelPictureItem: ProfileViewModelItem {
+class ModelPictureItem: ModelItem {
     var type: ModelItemType {
         return .picture
     }

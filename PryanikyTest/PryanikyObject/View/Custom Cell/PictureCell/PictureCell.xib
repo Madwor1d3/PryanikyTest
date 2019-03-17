@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="350" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hT4-ur-UZI">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hT4-ur-UZI">
                         <rect key="frame" x="10" y="10" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="Kvp-Bf-hb6"/>
@@ -46,7 +46,7 @@
                 <outlet property="labelText" destination="XEt-2B-alf" id="QXU-rU-Eqi"/>
                 <outlet property="pictureImage" destination="hT4-ur-UZI" id="jf0-im-TOU"/>
             </connections>
-            <point key="canvasLocation" x="160" y="186.65667166416793"/>
+            <point key="canvasLocation" x="160" y="186.20689655172416"/>
         </tableViewCell>
     </objects>
 </document>

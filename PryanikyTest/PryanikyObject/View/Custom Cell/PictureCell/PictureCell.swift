@@ -13,7 +13,7 @@ class PictureCell: UITableViewCell {
     @IBOutlet weak var labelText: UILabel!
     @IBOutlet weak var pictureImage: UIImageView!
     
-    var item: ProfileViewModelItem? {
+    var item: ModelItem? {
         didSet {
             guard let item = item as? ModelPictureItem  else {
                 return

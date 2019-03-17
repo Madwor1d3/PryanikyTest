@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ModelHzItem: ProfileViewModelItem {
+class ModelHzItem: ModelItem {
     var type: ModelItemType {
         return .hz
     }

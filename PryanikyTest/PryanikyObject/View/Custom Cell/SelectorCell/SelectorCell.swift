@@ -10,9 +10,9 @@ import UIKit
 
 class SelectorCell: UITableViewCell {
     
+    @IBOutlet weak var selector: UIPickerView!
     
-
-    var item: ProfileViewModelItem? {
+    var item: ModelItem? {
         didSet {
             guard let item = item as? ModelSelectorItem  else {
                 return

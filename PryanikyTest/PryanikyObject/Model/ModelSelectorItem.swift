@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ModelSelectorItem: ProfileViewModelItem {
+class ModelSelectorItem: ModelItem {
     var type: ModelItemType {
         return .selector
     }
