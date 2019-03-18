@@ -25,7 +25,7 @@ class PryanikyMainView: UIViewController, SelectorCellDelegate{
     }
     
     func showSelectorAlert(called by: Int) {
-        let titleText = "Данное событие инициировано обектом id - \(by)"
+        let titleText = "Данное событие инициировано объектом \nid - \(by)"
         let alert = UIAlertController(title: titleText, message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -83,8 +83,8 @@ extension PryanikyMainView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let someLet = presenter.items[indexPath.section].type.rawValue
-        let titleText = "Данное событие инициировано обектом name - \(someLet)"
+        let textValue = presenter.items[indexPath.section].type.rawValue
+        let titleText = "Данное событие инициировано объектом \nname - \(textValue)"
         let alert = UIAlertController(title: titleText, message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Понятно", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
