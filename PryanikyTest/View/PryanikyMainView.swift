@@ -75,25 +75,3 @@ extension PryanikyMainView: UITableViewDataSource {
         return UITableViewCell()
     }
 }
-
-extension PryanikyMainView: UIPickerViewDelegate {
-    
-}
-
-extension PryanikyMainView: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return presenter.singleObject.objectData[2].data.variants?.count ?? 0
-    }
-    
-    
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return presenter.singleObject.objectData[2].data.variants?[0].text
-    }
-}

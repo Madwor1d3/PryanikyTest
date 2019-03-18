@@ -13,3 +13,4 @@ struct SelectorVariantsData: Decodable {
     let id: Int
     let text: String
 }
+    

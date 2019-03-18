@@ -15,11 +15,23 @@ class ModelSelectorItem: ModelItem {
     var sectionTitle: String {
         return "selector section"
     }
+    
+    var rowCount: Int {
+        return variants.count
+    }
+    
     var selectedID: Int
     var variants: [SelectorVariantsData]
-    
+//    var variantsID: Int
+//    var variantsText: String
+//    
     init(selectedID: Int, variants: [SelectorVariantsData]) {
         self.selectedID = selectedID
         self.variants = variants
     }
+    
+//    init(variantsID: Int, variantsText: String) {
+//        self.variantsID = variantsID
+//        self.variantsText = variantsText
+//    }
 }

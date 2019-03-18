@@ -26,7 +26,6 @@
 		0A60AEB22237F12B0093FD1E /* SelectorVariantsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AEB12237F12B0093FD1E /* SelectorVariantsData.swift */; };
 		0A60AEC6223806310093FD1E /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AEC5223806310093FD1E /* Object.swift */; };
 		0A60AECB223824FA0093FD1E /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AECA223824FA0093FD1E /* DataContainer.swift */; };
-		0AC9F6CD223EBD6200B75D7D /* ModelVariantsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9F6CC223EBD6200B75D7D /* ModelVariantsItem.swift */; };
 		0AFCB7E3223AAEDE008C31F3 /* ModelItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFCB7E2223AAEDE008C31F3 /* ModelItemType.swift */; };
 		406EFE45A3D3B84BE7FC7F2D /* Pods_PryanikyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDA35B99E678CB95FA24969 /* Pods_PryanikyTest.framework */; };
 /* End PBXBuildFile section */
@@ -53,7 +52,6 @@
 		0A60AEB12237F12B0093FD1E /* SelectorVariantsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorVariantsData.swift; sourceTree = "<group>"; };
 		0A60AEC5223806310093FD1E /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		0A60AECA223824FA0093FD1E /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
-		0AC9F6CC223EBD6200B75D7D /* ModelVariantsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelVariantsItem.swift; sourceTree = "<group>"; };
 		0AFCB7E2223AAEDE008C31F3 /* ModelItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelItemType.swift; sourceTree = "<group>"; };
 		158A23636600FFB935394964 /* Pods-PryanikyTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PryanikyTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PryanikyTest/Pods-PryanikyTest.debug.xcconfig"; sourceTree = "<group>"; };
 		50BEF4C38EAC4F907DEBA6C9 /* Pods-PryanikyTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PryanikyTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-PryanikyTest/Pods-PryanikyTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				0A540621223D27E00013CFA9 /* ModelHzItem.swift */,
 				0A540623223D28640013CFA9 /* ModelPictureItem.swift */,
 				0A540625223D29600013CFA9 /* ModelSelectorItem.swift */,
-				0AC9F6CC223EBD6200B75D7D /* ModelVariantsItem.swift */,
 			);
 			name = ModelItems;
 			sourceTree = "<group>";
@@ -141,44 +138,12 @@
 		0A60AE8C2236CDD30093FD1E /* PryanikyTest */ = {
 			isa = PBXGroup;
 			children = (
-				0A60AEA52236E38A0093FD1E /* Application */,
-				0A60AEA72236E3D30093FD1E /* PryanikyObject */,
+				0A60AEA82236E4BA0093FD1E /* Model */,
+				0A60AEA92236E4C00093FD1E /* View */,
+				0A60AEAA2236E4C80093FD1E /* Presenter */,
 				0A60AEA62236E3BB0093FD1E /* Supporting files */,
 			);
 			path = PryanikyTest;
-			sourceTree = "<group>";
-		};
-		0A60AEA12236E3560093FD1E /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				0A60AE8D2236CDD30093FD1E /* AppDelegate.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		0A60AEA22236E3590093FD1E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0A60AE962236CDD60093FD1E /* LaunchScreen.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		0A60AEA32236E35C0093FD1E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		0A60AEA52236E38A0093FD1E /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				0A60AEA32236E35C0093FD1E /* Model */,
-				0A60AEA22236E3590093FD1E /* View */,
-				0A60AEA12236E3560093FD1E /* Presenter */,
-			);
-			path = Application;
 			sourceTree = "<group>";
 		};
 		0A60AEA62236E3BB0093FD1E /* Supporting files */ = {
@@ -190,22 +155,12 @@
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
-		0A60AEA72236E3D30093FD1E /* PryanikyObject */ = {
-			isa = PBXGroup;
-			children = (
-				0A60AEA82236E4BA0093FD1E /* Model */,
-				0A60AEA92236E4C00093FD1E /* View */,
-				0A60AEAA2236E4C80093FD1E /* Presenter */,
-			);
-			path = PryanikyObject;
-			sourceTree = "<group>";
-		};
 		0A60AEA82236E4BA0093FD1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0A60AEB52237F2A00093FD1E /* ObjectData */,
-				0AFCB7E2223AAEDE008C31F3 /* ModelItemType.swift */,
 				0A540629223D3D990013CFA9 /* ModelItems */,
+				0AFCB7E2223AAEDE008C31F3 /* ModelItemType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,9 +168,10 @@
 		0A60AEA92236E4C00093FD1E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0A60AE912236CDD30093FD1E /* Pryaniky.storyboard */,
 				0A60AE8F2236CDD30093FD1E /* PryanikyMainView.swift */,
 				0A57B874223BF56F0009851D /* Custom Cell */,
+				0A60AE912236CDD30093FD1E /* Pryaniky.storyboard */,
+				0A60AE962236CDD60093FD1E /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				0A23F3BA223D5C5100DC9B24 /* Presenter.swift */,
+				0A60AE8D2236CDD30093FD1E /* AppDelegate.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -393,7 +350,6 @@
 				0A57B87A223BF6150009851D /* SelectorCell.swift in Sources */,
 				0A57B881223BF6690009851D /* HzCell.swift in Sources */,
 				0A57B885223BF6870009851D /* PictureCell.swift in Sources */,
-				0AC9F6CD223EBD6200B75D7D /* ModelVariantsItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
