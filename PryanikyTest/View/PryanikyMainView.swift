@@ -8,24 +8,28 @@
 
 import UIKit
 
-class PryanikyMainView: UIViewController {
+class PryanikyMainView: UIViewController, SelectorCellDelegate{
     
     var presenter = Presenter()
     
     @IBOutlet weak var tableView: UITableView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.tableFooterView = UIView()
         cellRegister()
         presenter.jsonParsing { [weak self] items, error in
             self?.tableView.reloadData()
         }
-        
     }
     
-    
+    func showSelectorAlert(called by: Int) {
+        let titleText = "Данное событие инициировано обектом id - \(by)"
+        let alert = UIAlertController(title: titleText, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     
     func cellRegister() {
         let hzCellName = UINib(nibName: "HzCell", bundle: Bundle.main)
@@ -35,11 +39,10 @@ class PryanikyMainView: UIViewController {
         let selectorCellName = UINib(nibName: "SelectorCell", bundle: Bundle.main)
         tableView.register(selectorCellName, forCellReuseIdentifier: "SelectorCell")
     }
-    
 }
 
+
 extension PryanikyMainView: UITableViewDelegate {
-    
 }
 
 extension PryanikyMainView: UITableViewDataSource {
@@ -47,13 +50,12 @@ extension PryanikyMainView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return presenter.items.count
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.items[section].rowCount
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let item = presenter.items[indexPath.section]
         switch item.type {
         case .hz:
@@ -66,12 +68,25 @@ extension PryanikyMainView: UITableViewDataSource {
                 cell.item = item
                 return cell
             }
-            
         case .selector:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "SelectorCell", for: indexPath) as? SelectorCell {
+                cell.item = item as? ModelSelectorItem
+                cell.delegate = self
                 return cell
             }
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return presenter.items[section].sectionTitle
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let someLet = presenter.items[indexPath.section].type.rawValue
+        let titleText = "Данное событие инициировано обектом name - \(someLet)"
+        let alert = UIAlertController(title: titleText, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Понятно", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

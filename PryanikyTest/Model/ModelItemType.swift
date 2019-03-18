@@ -9,18 +9,20 @@
 import Foundation
 
 enum ModelItemType: String {
+    
     case hz
     case picture
     case selector
 }
 
 protocol ModelItem {
+    
     var type: ModelItemType { get }
-    var rowCount: Int { get }
     var sectionTitle: String  { get }
 }
 
 extension ModelItem {
+    
     var rowCount: Int {
         return 1
     }

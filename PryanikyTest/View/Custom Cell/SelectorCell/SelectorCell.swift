@@ -8,36 +8,42 @@
 
 import UIKit
 
+protocol SelectorCellDelegate: class {
+    func showSelectorAlert(called by: Int)
+}
+
 class SelectorCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate {
-
+    
     @IBOutlet weak var selector: UIPickerView!
-
-    var item: ModelItem? {
+    
+    weak var delegate: SelectorCellDelegate?
+    
+    var item: ModelSelectorItem? {
         didSet {
-            guard let item = item as? ModelSelectorItem  else {
-                return
-            }
+            guard let item = item else { return }
             configure(with: item)
         }
     }
     
     func configure(with item: ModelSelectorItem) {
-        
         selector.delegate = self
         selector.dataSource = self
-        }
-    
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return item?.rowCount ?? 0
+        return item?.variants.count ?? 0
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return item?.
+        return item?.variants[row].text
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.delegate?.showSelectorAlert(called: item?.variants[row].id ?? 0)
     }
+}
+

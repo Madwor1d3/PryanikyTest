@@ -47,12 +47,7 @@ class Presenter {
                             if let objectID = self.singleObject?.objectData.first(where: {$0.name == "selector"}), let objectVariants = self.singleObject?.objectData.first(where: {$0.name == "selector"}), let selectedID = objectID.data.selectedID, let selectedVariants = objectVariants.data.variants {
                                 let selectorItem = ModelSelectorItem(selectedID: selectedID, variants: selectedVariants)
                                 self.items.append(selectorItem)
-                                
-                                print(selectedVariants[0].text)
-                                print(selectedVariants[1].text)
-                                print(selectedVariants[2].text)
                             }
-
                         }
                     }
                 }

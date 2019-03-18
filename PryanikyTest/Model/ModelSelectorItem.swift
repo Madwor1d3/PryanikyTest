@@ -9,11 +9,13 @@
 import Foundation
 
 class ModelSelectorItem: ModelItem {
+    
     var type: ModelItemType {
         return .selector
     }
+    
     var sectionTitle: String {
-        return "selector section"
+        return "Selector"
     }
     
     var rowCount: Int {
@@ -22,16 +24,9 @@ class ModelSelectorItem: ModelItem {
     
     var selectedID: Int
     var variants: [SelectorVariantsData]
-//    var variantsID: Int
-//    var variantsText: String
-//    
+ 
     init(selectedID: Int, variants: [SelectorVariantsData]) {
         self.selectedID = selectedID
         self.variants = variants
     }
-    
-//    init(variantsID: Int, variantsText: String) {
-//        self.variantsID = variantsID
-//        self.variantsText = variantsText
-//    }
 }

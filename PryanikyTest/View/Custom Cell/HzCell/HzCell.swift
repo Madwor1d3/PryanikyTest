@@ -19,5 +19,5 @@ class HzCell: UITableViewCell {
             }
             labelText.text = item.text
         }
-    }  
+    }
 }

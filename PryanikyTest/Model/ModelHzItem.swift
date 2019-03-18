@@ -9,11 +9,13 @@
 import Foundation
 
 class ModelHzItem: ModelItem {
+    
     var type: ModelItemType {
         return .hz
     }
+    
     var sectionTitle: String {
-        return "Hz section"
+        return "Hz"
     }
     
     var text: String

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Kingfisher
+
+
 
 class PictureCell: UITableViewCell {
     
@@ -19,8 +22,7 @@ class PictureCell: UITableViewCell {
                 return
             }
             labelText.text = item.text
-            pictureImage.image = UIImage(named: item.pictureUrl)
+            pictureImage.kf.setImage(with: URL(string: item.pictureUrl))
         }
     }
-    
 }

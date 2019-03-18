@@ -168,10 +168,10 @@
 		0A60AEA92236E4C00093FD1E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0A60AE8F2236CDD30093FD1E /* PryanikyMainView.swift */,
-				0A57B874223BF56F0009851D /* Custom Cell */,
 				0A60AE912236CDD30093FD1E /* Pryaniky.storyboard */,
 				0A60AE962236CDD60093FD1E /* LaunchScreen.storyboard */,
+				0A60AE8F2236CDD30093FD1E /* PryanikyMainView.swift */,
+				0A57B874223BF56F0009851D /* Custom Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";

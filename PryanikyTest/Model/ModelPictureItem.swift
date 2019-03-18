@@ -9,12 +9,15 @@
 import Foundation
 
 class ModelPictureItem: ModelItem {
+    
     var type: ModelItemType {
         return .picture
     }
+    
     var sectionTitle: String {
-        return "picture section"
+        return "Picture"
     }
+    
     var text: String
     var pictureUrl: String
     
