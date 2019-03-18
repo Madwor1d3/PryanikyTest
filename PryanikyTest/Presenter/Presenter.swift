@@ -27,27 +27,24 @@ class Presenter {
             
             do {
                 self.singleObject = try JSONDecoder().decode(Object.self, from: data)
-                DispatchQueue.main.async {
-                    
-                    let sequenceArray = self.singleObject.objectView
-                    for i in sequenceArray {
-                        if i == "hz" {
-                            if let objectName = self.singleObject?.objectData.first(where: {$0.name == "hz"}), let objectText = objectName.data.text {
-                                let hzItem = ModelHzItem(text: objectText)
-                                self.items.append(hzItem)
-                            }
+                let sequenceArray = self.singleObject.objectView
+                for i in sequenceArray {
+                    if i == "hz" {
+                        if let objectName = self.singleObject?.objectData.first(where: {$0.name == "hz"}), let objectText = objectName.data.text {
+                            let hzItem = ModelHzItem(text: objectText)
+                            self.items.append(hzItem)
                         }
-                        else if i == "picture" {
-                            if let pictureObjectName = self.singleObject?.objectData.first(where: {$0.name == "picture"}), let pictureObjectUrl = self.singleObject?.objectData.first(where: {$0.name == "picture"}), let pictureUrl = pictureObjectUrl.data.url {
-                                let pictureItem = ModelPictureItem(text: pictureObjectName.name, pictureUrl: pictureUrl)
-                                self.items.append(pictureItem)
-                            }
+                    }
+                    else if i == "picture" {
+                        if let pictureObjectName = self.singleObject?.objectData.first(where: {$0.name == "picture"}), let pictureObjectUrl = self.singleObject?.objectData.first(where: {$0.name == "picture"}), let pictureUrl = pictureObjectUrl.data.url {
+                            let pictureItem = ModelPictureItem(text: pictureObjectName.name, pictureUrl: pictureUrl)
+                            self.items.append(pictureItem)
                         }
-                        else if i == "selector" {
-                            if let objectID = self.singleObject?.objectData.first(where: {$0.name == "selector"}), let objectVariants = self.singleObject?.objectData.first(where: {$0.name == "selector"}), let selectedID = objectID.data.selectedID, let selectedVariants = objectVariants.data.variants {
-                                let selectorItem = ModelSelectorItem(selectedID: selectedID, variants: selectedVariants)
-                                self.items.append(selectorItem)
-                            }
+                    }
+                    else if i == "selector" {
+                        if let objectID = self.singleObject?.objectData.first(where: {$0.name == "selector"}), let objectVariants = self.singleObject?.objectData.first(where: {$0.name == "selector"}), let selectedID = objectID.data.selectedID, let selectedVariants = objectVariants.data.variants {
+                            let selectorItem = ModelSelectorItem(selectedID: selectedID, variants: selectedVariants)
+                            self.items.append(selectorItem)
                         }
                     }
                 }
