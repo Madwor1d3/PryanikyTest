@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SelectorCellDelegate: class {
-    func showSelectorAlert(called by: Int)
+    func showAlert(called by: Int)
 }
 
 class SelectorCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate {
@@ -43,7 +43,7 @@ class SelectorCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegat
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.delegate?.showSelectorAlert(called: item?.variants[row].id ?? 0)
+        self.delegate?.showAlert(called: item?.variants[row].id ?? 0)
     }
 }
 
