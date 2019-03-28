@@ -26,8 +26,10 @@ class SelectorCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegat
     }
     
     func configure(with item: ModelSelectorItem) {
+        let preSelectedRow = item.selectedID
         selector.delegate = self
         selector.dataSource = self
+        selector.selectRow(preSelectedRow, inComponent: 0, animated: true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

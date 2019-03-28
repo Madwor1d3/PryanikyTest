@@ -72,6 +72,7 @@ extension PryanikyMainView: UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "SelectorCell", for: indexPath) as? SelectorCell {
                 cell.item = item as? ModelSelectorItem
                 cell.delegate = self
+//                cell.selector.selectRow(2, inComponent: 0, animated: true)
                 return cell
             }
         }
