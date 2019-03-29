@@ -26,6 +26,9 @@
 		0A60AEB22237F12B0093FD1E /* SelectorVariantsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AEB12237F12B0093FD1E /* SelectorVariantsData.swift */; };
 		0A60AEC6223806310093FD1E /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AEC5223806310093FD1E /* Object.swift */; };
 		0A60AECB223824FA0093FD1E /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60AECA223824FA0093FD1E /* DataContainer.swift */; };
+		0AE1D75A224E21D900753754 /* ModelMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1D759224E21D900753754 /* ModelMediaItem.swift */; };
+		0AE1D772224E561600753754 /* MediaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE1D770224E561600753754 /* MediaCell.xib */; };
+		0AE1D773224E561600753754 /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1D771224E561600753754 /* MediaCell.swift */; };
 		0AFCB7E3223AAEDE008C31F3 /* ModelItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFCB7E2223AAEDE008C31F3 /* ModelItemType.swift */; };
 		406EFE45A3D3B84BE7FC7F2D /* Pods_PryanikyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDA35B99E678CB95FA24969 /* Pods_PryanikyTest.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +55,9 @@
 		0A60AEB12237F12B0093FD1E /* SelectorVariantsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorVariantsData.swift; sourceTree = "<group>"; };
 		0A60AEC5223806310093FD1E /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		0A60AECA223824FA0093FD1E /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
+		0AE1D759224E21D900753754 /* ModelMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMediaItem.swift; sourceTree = "<group>"; };
+		0AE1D770224E561600753754 /* MediaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaCell.xib; sourceTree = "<group>"; };
+		0AE1D771224E561600753754 /* MediaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
 		0AFCB7E2223AAEDE008C31F3 /* ModelItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelItemType.swift; sourceTree = "<group>"; };
 		158A23636600FFB935394964 /* Pods-PryanikyTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PryanikyTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PryanikyTest/Pods-PryanikyTest.debug.xcconfig"; sourceTree = "<group>"; };
 		50BEF4C38EAC4F907DEBA6C9 /* Pods-PryanikyTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PryanikyTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-PryanikyTest/Pods-PryanikyTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +82,7 @@
 				0A540621223D27E00013CFA9 /* ModelHzItem.swift */,
 				0A540623223D28640013CFA9 /* ModelPictureItem.swift */,
 				0A540625223D29600013CFA9 /* ModelSelectorItem.swift */,
+				0AE1D759224E21D900753754 /* ModelMediaItem.swift */,
 			);
 			name = ModelItems;
 			sourceTree = "<group>";
@@ -83,6 +90,7 @@
 		0A57B874223BF56F0009851D /* Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
+				0AE1D76F224E55FA00753754 /* MediaCell */,
 				0A57B87E223BF6500009851D /* HzCell */,
 				0A57B87D223BF6360009851D /* PictureCell */,
 				0A57B87C223BF6240009851D /* SelectorCell */,
@@ -196,6 +204,15 @@
 			name = ObjectData;
 			sourceTree = "<group>";
 		};
+		0AE1D76F224E55FA00753754 /* MediaCell */ = {
+			isa = PBXGroup;
+			children = (
+				0AE1D771224E561600753754 /* MediaCell.swift */,
+				0AE1D770224E561600753754 /* MediaCell.xib */,
+			);
+			path = MediaCell;
+			sourceTree = "<group>";
+		};
 		530756BD04595C63311B96BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +293,7 @@
 			files = (
 				0A60AE982236CDD60093FD1E /* LaunchScreen.storyboard in Resources */,
 				0A60AE952236CDD60093FD1E /* Assets.xcassets in Resources */,
+				0AE1D772224E561600753754 /* MediaCell.xib in Resources */,
 				0A57B886223BF6870009851D /* PictureCell.xib in Resources */,
 				0A57B87B223BF6150009851D /* SelectorCell.xib in Resources */,
 				0A60AE932236CDD30093FD1E /* Pryaniky.storyboard in Resources */,
@@ -337,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE1D75A224E21D900753754 /* ModelMediaItem.swift in Sources */,
 				0A60AEB02237EA690093FD1E /* DictionaryData.swift in Sources */,
 				0A540622223D27E00013CFA9 /* ModelHzItem.swift in Sources */,
 				0A60AEB22237F12B0093FD1E /* SelectorVariantsData.swift in Sources */,
@@ -346,6 +365,7 @@
 				0A60AEC6223806310093FD1E /* Object.swift in Sources */,
 				0A60AE8E2236CDD30093FD1E /* AppDelegate.swift in Sources */,
 				0A23F3BB223D5C5100DC9B24 /* Presenter.swift in Sources */,
+				0AE1D773224E561600753754 /* MediaCell.swift in Sources */,
 				0A60AECB223824FA0093FD1E /* DataContainer.swift in Sources */,
 				0AFCB7E3223AAEDE008C31F3 /* ModelItemType.swift in Sources */,
 				0A57B87A223BF6150009851D /* SelectorCell.swift in Sources */,

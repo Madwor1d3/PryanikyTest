@@ -10,7 +10,8 @@ import Foundation
 
 class Presenter {
     
-    private let jsonUrlString = "https://prnk.blob.core.windows.net/tmp/JSONSample.json"
+//    private let jsonUrlString = "https://prnk.blob.core.windows.net/tmp/JSONSample.json"
+    private let jsonUrlString = "https://chat.pryaniky.com/json/data-1c.json"
     
     var items = [ModelItem]()
     var singleObject: Object!
@@ -45,6 +46,18 @@ class Presenter {
                         if let objectID = self.singleObject?.objectData.first(where: {$0.name == "selector"}), let objectVariants = self.singleObject?.objectData.first(where: {$0.name == "selector"}), let selectedID = objectID.data.selectedID, let selectedVariants = objectVariants.data.variants {
                             let selectorItem = ModelSelectorItem(selectedID: selectedID, variants: selectedVariants)
                             self.items.append(selectorItem)
+                        }
+                    }
+                    else if i == "audio" {
+                        if let audioObjectName = self.singleObject?.objectData.first(where: {$0.name == "audio"}), let audioObjectCoverUrl = self.singleObject?.objectData.first(where: {$0.name == "audio"}), let audioObjectMediaUrl = self.singleObject?.objectData.first(where: {$0.name == "audio"}), let audioCoverUrl = audioObjectCoverUrl.data.coverURL, let audioMediaUrl = audioObjectMediaUrl.data.mediaURL, let audioText = audioObjectName.data.text {
+                            let audioItem = ModelMediaItem(text: audioText, coverUrl: audioCoverUrl, mediaUrl: audioMediaUrl)
+                            self.items.append(audioItem)
+                        }
+                    }
+                    else if i == "video" {
+                        if let videoObjectName = self.singleObject?.objectData.first(where: {$0.name == "video"}), let videoObjectCoverUrl = self.singleObject?.objectData.first(where: {$0.name == "video"}), let videoObjectMediaUrl = self.singleObject?.objectData.first(where: {$0.name == "video"}), let videoCoverUrl = videoObjectCoverUrl.data.coverURL, let videoMediaUrl = videoObjectMediaUrl.data.mediaURL, let videoText = videoObjectName.data.text {
+                            let videoItem = ModelMediaItem(text: videoText, coverUrl: videoCoverUrl, mediaUrl: videoMediaUrl)
+                            self.items.append(videoItem)
                         }
                     }
                 }

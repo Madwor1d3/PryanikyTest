@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
-class PryanikyMainView: UIViewController, SelectorCellDelegate{
-    
+class PryanikyMainView: UIViewController, SelectorCellDelegate, MediaLaunching{
+
     var presenter = Presenter()
     
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +23,16 @@ class PryanikyMainView: UIViewController, SelectorCellDelegate{
         cellRegister()
         presenter.jsonParsing { [weak self] items, error in
             self?.tableView.reloadData()
+        }
+    }
+    
+    func showMediaPlayer(url: URL) {
+        
+        let player = AVPlayer(url: url)
+        let controller = AVPlayerViewController()
+        controller.player = player
+        present(controller, animated: true) {
+            player.play()
         }
     }
     
@@ -38,6 +50,8 @@ class PryanikyMainView: UIViewController, SelectorCellDelegate{
         tableView.register(pictureCellName, forCellReuseIdentifier: "PictureCell")
         let selectorCellName = UINib(nibName: "SelectorCell", bundle: Bundle.main)
         tableView.register(selectorCellName, forCellReuseIdentifier: "SelectorCell")
+        let mediaCellName = UINib(nibName: "MediaCell", bundle: Bundle.main)
+        tableView.register(mediaCellName, forCellReuseIdentifier: "MediaCell")
     }
 }
 
@@ -72,7 +86,12 @@ extension PryanikyMainView: UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "SelectorCell", for: indexPath) as? SelectorCell {
                 cell.item = item as? ModelSelectorItem
                 cell.delegate = self
-//                cell.selector.selectRow(2, inComponent: 0, animated: true)
+                return cell
+            }
+        case .media:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MediaCell", for: indexPath) as? MediaCell {
+                cell.item = item as? ModelMediaItem
+                cell.delegate = self
                 return cell
             }
         }
