@@ -38,6 +38,10 @@ class PryanikyMainView: UIViewController, SelectorCellDelegate{
         tableView.register(pictureCellName, forCellReuseIdentifier: "PictureCell")
         let selectorCellName = UINib(nibName: "SelectorCell", bundle: Bundle.main)
         tableView.register(selectorCellName, forCellReuseIdentifier: "SelectorCell")
+        let audioCellName = UINib(nibName: "AudioCell", bundle: Bundle.main)
+        tableView.register(audioCellName, forCellReuseIdentifier: "AudioCell")
+        let videoCellName = UINib(nibName: "VideoCell", bundle: Bundle.main)
+        tableView.register(videoCellName, forCellReuseIdentifier: "VideoCell")
     }
 }
 

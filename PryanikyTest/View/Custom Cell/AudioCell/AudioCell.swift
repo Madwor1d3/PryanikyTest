@@ -7,18 +7,25 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
+import Kingfisher
 
 class AudioCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var audioImage: UIImageView!
+    @IBOutlet weak var audioText: UILabel!
+    
+    var item: ModelItem? {
+        didSet {
+            guard let item = item as? ModelAudioItem  else {
+                return
+            }
+            audioText.text = item.text
+            audioImage.kf.setImage(with: URL(string: item.coverUrl))
+        }
     }
     
+    @IBAction func playSoundButtonPressed(_ sender: UIButton) {
+    }
 }

@@ -7,18 +7,26 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
+import Kingfisher
 
 class VideoCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBOutlet weak var videoImage: UIImageView!
+    @IBOutlet weak var videoText: UILabel!
+    
+    var item: ModelItem? {
+        didSet {
+            guard let item = item as? ModelVideoItem  else {
+                return
+            }
+            videoText.text = item.text
+            videoImage.kf.setImage(with: URL(string: item.coverUrl))
+        }
     }
     
+    @IBAction func playVideoButtonPressed(_ sender: UIButton) {
+    }
 }
+
