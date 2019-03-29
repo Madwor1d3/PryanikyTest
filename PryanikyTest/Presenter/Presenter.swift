@@ -9,8 +9,8 @@
 import Foundation
 
 class Presenter {
-    
-//    private let jsonUrlString = "https://prnk.blob.core.windows.net/tmp/JSONSample.json"
+    //    private let jsonUrlString = "https://chat.pryaniky.com/json/data-4.json"
+    //    private let jsonUrlString = "https://prnk.blob.core.windows.net/tmp/JSONSample.json"
     private let jsonUrlString = "https://chat.pryaniky.com/json/data-1c.json"
     
     var items = [ModelItem]()
@@ -31,9 +31,11 @@ class Presenter {
                 let sequenceArray = self.singleObject.objectView
                 for i in sequenceArray {
                     if i == "hz" {
-                        if let objectName = self.singleObject?.objectData.first(where: {$0.name == "hz"}), let objectText = objectName.data.text {
-                            let hzItem = ModelHzItem(text: objectText)
-                            self.items.append(hzItem)
+                        if let objectName = self.singleObject?.objectData.filter({ return $0.name == "hz"}).map({$0.data.text}) {
+                            for objectText in objectName {
+                                let hzItem = ModelHzItem(text: objectText ?? "")
+                                self.items.append(hzItem)
+                            }
                         }
                     }
                     else if i == "picture" {
