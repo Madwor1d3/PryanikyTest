@@ -47,6 +47,20 @@ class Presenter {
                             self.items.append(selectorItem)
                         }
                     }
+                    else if i == "audio" {
+                        if let audioObjectName = self.singleObject?.objectData.first(where: {$0.name == "audio"}), let audioObjectCoverUrl = self.singleObject?.objectData.first(where: {$0.name == "audio"}), let audioObjectMediaUrl = self.singleObject?.objectData.first(where: {$0.name == "audio"}), let audioCoverUrl = audioObjectCoverUrl.data.coverURL, let audioMediaUrl = audioObjectMediaUrl.data.mediaURL, let audioText = audioObjectName.data.text {
+                            let audioItem = ModelAudioItem(text: audioText, coverUrl: audioCoverUrl, mediaUrl: audioMediaUrl)
+                            self.items.append(audioItem)
+                            print(audioObjectMediaUrl)
+                        }
+                    }
+                    else if i == "video" {
+                        if let videoObjectName = self.singleObject?.objectData.first(where: {$0.name == "video"}), let videoObjectCoverUrl = self.singleObject?.objectData.first(where: {$0.name == "video"}), let videoObjectMediaUrl = self.singleObject?.objectData.first(where: {$0.name == "video"}), let videoCoverUrl = videoObjectCoverUrl.data.coverURL, let videoMediaUrl = videoObjectMediaUrl.data.mediaURL, let videoText = videoObjectName.data.text {
+                            let videoItem = ModelAudioItem(text: videoText, coverUrl: videoCoverUrl, mediaUrl: videoMediaUrl)
+                            self.items.append(videoItem)
+                            print(videoObjectCoverUrl)
+                        }
+                    }
                 }
                 DispatchQueue.main.async {completionHandler(self.items, nil)}
             } catch {
