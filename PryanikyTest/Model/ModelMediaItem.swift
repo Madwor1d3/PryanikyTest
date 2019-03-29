@@ -1,5 +1,5 @@
 //
-//  ModelVideoItem.swift
+//  ModelAudioItem.swift
 //  PryanikyTest
 //
 //  Created by Madwor1d3 on 29/03/2019.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-class ModelVideoItem: ModelItem {
+class ModelMediaItem: ModelItem {
     
     var type: ModelItemType {
-        return .video
+        return .media
     }
     
     var sectionTitle: String {
-        return "Video"
+        return "Media"
     }
     
     var text: String

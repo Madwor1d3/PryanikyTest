@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
-class PryanikyMainView: UIViewController, SelectorCellDelegate{
-    
+class PryanikyMainView: UIViewController, SelectorCellDelegate, MediaLaunching{
+
     var presenter = Presenter()
     
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +23,16 @@ class PryanikyMainView: UIViewController, SelectorCellDelegate{
         cellRegister()
         presenter.jsonParsing { [weak self] items, error in
             self?.tableView.reloadData()
+        }
+    }
+    
+    func showMediaPlayer(url: URL) {
+        
+        let player = AVPlayer(url: url)
+        let controller = AVPlayerViewController()
+        controller.player = player
+        present(controller, animated: true) {
+            player.play()
         }
     }
     
@@ -38,10 +50,8 @@ class PryanikyMainView: UIViewController, SelectorCellDelegate{
         tableView.register(pictureCellName, forCellReuseIdentifier: "PictureCell")
         let selectorCellName = UINib(nibName: "SelectorCell", bundle: Bundle.main)
         tableView.register(selectorCellName, forCellReuseIdentifier: "SelectorCell")
-        let audioCellName = UINib(nibName: "AudioCell", bundle: Bundle.main)
-        tableView.register(audioCellName, forCellReuseIdentifier: "AudioCell")
-        let videoCellName = UINib(nibName: "VideoCell", bundle: Bundle.main)
-        tableView.register(videoCellName, forCellReuseIdentifier: "VideoCell")
+        let mediaCellName = UINib(nibName: "MediaCell", bundle: Bundle.main)
+        tableView.register(mediaCellName, forCellReuseIdentifier: "MediaCell")
     }
 }
 
@@ -78,14 +88,10 @@ extension PryanikyMainView: UITableViewDataSource {
                 cell.delegate = self
                 return cell
             }
-        case .audio:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "AudioCell", for: indexPath) as? AudioCell {
-                cell.item = item
-                return cell
-        }
-        case .video:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as? VideoCell {
-                cell.item = item
+        case .media:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MediaCell", for: indexPath) as? MediaCell {
+                cell.item = item as? ModelMediaItem
+                cell.delegate = self
                 return cell
             }
         }

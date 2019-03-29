@@ -13,8 +13,7 @@ enum ModelItemType: String {
     case hz
     case picture
     case selector
-    case audio
-    case video
+    case media
 }
 
 protocol ModelItem {
