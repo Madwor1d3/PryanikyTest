@@ -29,7 +29,8 @@ class SelectorCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegat
         let preSelectedRow = item.selectedID
         selector.delegate = self
         selector.dataSource = self
-        selector.selectRow(preSelectedRow, inComponent: 0, animated: true)
+        guard let index = item.variants.firstIndex(where: {$0.id == preSelectedRow}) else { return }
+        selector.selectRow(index, inComponent: 0, animated: true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
